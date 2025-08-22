@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://se5tqd4uybrx"]
+
+[ext_resource type="Script" uid="uid://0wkce2y6ctk2" path="res://log.gd" id="1_5gxlv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njov2"]
+size = Vector2(20, 123)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_njov2"]
+
+[node name="Log" type="RigidBody2D"]
+input_pickable = true
+script = ExtResource("1_5gxlv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_njov2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(20, 123)
+texture = SubResource("CanvasTexture_njov2")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
