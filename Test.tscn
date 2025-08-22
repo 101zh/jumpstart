@@ -1,11 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnnka5th1gldj"]
+[gd_scene load_steps=7 format=3 uid="uid://dnnka5th1gldj"]
 
 [ext_resource type="Texture2D" uid="uid://badksuhth80x4" path="res://icon.svg" id="1_mtyf4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myinc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_myinc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_myinc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njov2"]
+size = Vector2(20, 123)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_njov2"]
+
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(535, 393)
+[node name="Enemy2" type="RigidBody2D" parent="."]
+position = Vector2(238, 40)
+linear_velocity = Vector2(500, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_myinc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy2"]
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_mtyf4")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Enemy" type="RigidBody2D" parent="."]
+position = Vector2(628, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_myinc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_mtyf4")
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(540, 622.75)
+scale = Vector2(1450, 184.5)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2(0.0131034, -0.49729)
+scale = Vector2(0.000689655, 0.00542006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_myinc")
+
+[node name="Log" type="RigidBody2D" parent="."]
+position = Vector2(-8, -121)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Log"]
+position = Vector2(345, 200.5)
+shape = SubResource("RectangleShape2D_njov2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Log"]
+position = Vector2(345, 200.5)
+scale = Vector2(20, 123)
+texture = SubResource("CanvasTexture_njov2")
