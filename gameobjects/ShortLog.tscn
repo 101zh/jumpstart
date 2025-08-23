@@ -1,22 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://se5tqd4uybrx"]
+[gd_scene load_steps=4 format=3 uid="uid://cedn7npun3ndo"]
 
-[ext_resource type="Script" uid="uid://0wkce2y6ctk2" path="res://log.gd" id="1_5gxlv"]
+[ext_resource type="Script" uid="uid://0wkce2y6ctk2" path="res://log.gd" id="1_x4baa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njov2"]
-size = Vector2(20, 123)
+size = Vector2(20, 79)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_njov2"]
 
 [node name="Log" type="RigidBody2D"]
 input_pickable = true
 can_sleep = false
-script = ExtResource("1_5gxlv")
+script = ExtResource("1_x4baa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_njov2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(20, 123)
+position = Vector2(0, 1.66893e-06)
+scale = Vector2(20, 80)
 texture = SubResource("CanvasTexture_njov2")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

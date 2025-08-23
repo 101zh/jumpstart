@@ -1,9 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dnnka5th1gldj"]
 
-[ext_resource type="Texture2D" uid="uid://badksuhth80x4" path="res://icon.svg" id="1_mtyf4"]
+[ext_resource type="PackedScene" uid="uid://dk3m8yiyy7mbs" path="res://gameobjects/Enemy.tscn" id="1_njov2"]
 [ext_resource type="PackedScene" uid="uid://se5tqd4uybrx" path="res://gameobjects/MediumLog.tscn" id="3_2au82"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_myinc"]
+[ext_resource type="PackedScene" uid="uid://d0mdlixr700io" path="res://gameobjects/LongLog.tscn" id="4_8tn2x"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_myinc"]
 
@@ -11,28 +10,11 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Enemy2" type="RigidBody2D" parent="."]
-position = Vector2(755, 502)
-linear_velocity = Vector2(500, 0)
+[node name="Enemy2" parent="." instance=ExtResource("1_njov2")]
+position = Vector2(731, 488)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2"]
-scale = Vector2(2.5, 2.5)
-shape = SubResource("RectangleShape2D_myinc")
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemy2"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_mtyf4")
-
-[node name="Enemy" type="RigidBody2D" parent="."]
-position = Vector2(604, 504)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-scale = Vector2(2.5, 2.5)
-shape = SubResource("RectangleShape2D_myinc")
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_mtyf4")
+[node name="Enemy" parent="." instance=ExtResource("1_njov2")]
+position = Vector2(557, 484)
 
 [node name="Ground" type="Sprite2D" parent="."]
 position = Vector2(540, 622.75)
@@ -46,12 +28,19 @@ scale = Vector2(0.000689655, 0.00542006)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_myinc")
 
-[node name="Log2" parent="." instance=ExtResource("3_2au82")]
-position = Vector2(663, 468)
+[node name="Log5" parent="." instance=ExtResource("3_2au82")]
+position = Vector2(808, 468)
 
-[node name="Log3" parent="." instance=ExtResource("3_2au82")]
-position = Vector2(604, 381)
+[node name="Log4" parent="." instance=ExtResource("3_2au82")]
+position = Vector2(647, 468)
+
+[node name="Log7" parent="." instance=ExtResource("4_8tn2x")]
+position = Vector2(733, 395)
 rotation = 1.5708
 
-[node name="Log" parent="." instance=ExtResource("3_2au82")]
-position = Vector2(545, 467)
+[node name="Log6" parent="." instance=ExtResource("4_8tn2x")]
+position = Vector2(562, 395)
+rotation = 1.5708
+
+[node name="Log3" parent="." instance=ExtResource("3_2au82")]
+position = Vector2(487, 468)
