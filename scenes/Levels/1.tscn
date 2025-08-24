@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnnka5th1gldj"]
+[gd_scene load_steps=7 format=3 uid="uid://dnnka5th1gldj"]
 
 [ext_resource type="PackedScene" uid="uid://dk3m8yiyy7mbs" path="res://gameobjects/Enemy.tscn" id="1_0d6la"]
+[ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="1_uo1kc"]
 [ext_resource type="PackedScene" uid="uid://se5tqd4uybrx" path="res://gameobjects/MediumLog.tscn" id="2_di7wo"]
 [ext_resource type="PackedScene" uid="uid://d0mdlixr700io" path="res://gameobjects/LongLog.tscn" id="3_iscks"]
 
@@ -28,6 +29,18 @@ scale = Vector2(0.000689655, 0.00542006)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_myinc")
 
+[node name="Ground" type="Sprite2D" parent="Ground"]
+position = Vector2(540, 622.75)
+scale = Vector2(1450, 184.5)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground/Ground"]
+position = Vector2(0.0131034, -0.49729)
+scale = Vector2(0.000689655, 0.00542006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_myinc")
+
 [node name="Log5" parent="." instance=ExtResource("2_di7wo")]
 position = Vector2(808, 468)
 
@@ -44,3 +57,8 @@ rotation = 1.5708
 
 [node name="Log3" parent="." instance=ExtResource("2_di7wo")]
 position = Vector2(487, 468)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_uo1kc")]
+visible = false

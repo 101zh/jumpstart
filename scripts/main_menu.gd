@@ -7,11 +7,11 @@ func _ready():
 
 
 func _on_start_button_down() -> void:
-	get_tree().change_scene_to_file("res://scenes/Test.tscn")
+	get_tree().change_scene_to_file("res://scenes/Levels/1.tscn")
 
 
 func _on_levels_button_down() -> void:
-	get_tree().change_scene_to_file("res://scenes/LevelsMenu.tscn")
+	GameManager.change_scene_to_file("res://scenes/LevelsMenu.tscn")
 
 
 func _on_quit_button_down() -> void:

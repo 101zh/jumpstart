@@ -1,21 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://chtm4kq5ubky2"]
+[gd_scene load_steps=4 format=3 uid="uid://hp67lgdqe4o0"]
 
-[ext_resource type="Script" uid="uid://di430d7t4od3c" path="res://scripts/main_menu.gd" id="1_yqorp"]
+[ext_resource type="Script" uid="uid://dkxbulimerlyu" path="res://scripts/pause_menu.gd" id="1_h37sy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqorp"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uylh"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukcvp"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h37sy"]
 bg_color = Color(0.385493, 0.385492, 0.385492, 1)
 
-[node name="MainMenu" type="Control"]
+[node name="PauseMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_yqorp")
+script = ExtResource("1_h37sy")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -24,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.03, 0.03, 0.03, 0.690196)
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -54,21 +55,21 @@ offset_right = 196.0
 offset_bottom = 141.5
 grow_horizontal = 2
 grow_vertical = 2
-focus_next = NodePath("Start")
+focus_next = NodePath("Resume")
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Resume" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(280, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxFlat_yqorp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yqorp")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ukcvp")
-text = "Start Game"
+theme_override_styles/focus = SubResource("StyleBoxFlat_1uylh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uylh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h37sy")
+text = "Resume"
 
 [node name="Levels" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(280, 60)
@@ -77,9 +78,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxFlat_yqorp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yqorp")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ukcvp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1uylh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uylh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h37sy")
 text = "Levels"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
@@ -89,11 +90,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxFlat_yqorp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yqorp")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ukcvp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1uylh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uylh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h37sy")
 text = "Quit"
 
-[connection signal="button_down" from="VBoxContainer/Start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="VBoxContainer/Resume" to="." method="_on_resume_button_down"]
 [connection signal="button_down" from="VBoxContainer/Levels" to="." method="_on_levels_button_down"]
 [connection signal="button_down" from="VBoxContainer/Quit" to="." method="_on_quit_button_down"]
