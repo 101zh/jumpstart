@@ -7,10 +7,9 @@ func _process(delta: float) -> void:
 func _on_resume_button_down() -> void:
 	pauseAndResume()
 
-func _on_levels_button_down() -> void:
-	resume()
-	GameManager.change_scene_to_file("res://scenes/LevelsMenu.tscn")
-
+func _on_main_menu_button_down() -> void:
+	GameManager.change_scene_to_file("res://gameobjects/MainMenu.tscn")
+	
 func _on_quit_button_down() -> void:
 	get_tree().quit()
 

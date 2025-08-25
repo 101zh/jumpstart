@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://hp67lgdqe4o0"]
+[gd_scene load_steps=4 format=3 uid="uid://dj0i3ilb0em5e"]
 
-[ext_resource type="Script" uid="uid://dkxbulimerlyu" path="res://scripts/pause_menu.gd" id="1_h37sy"]
+[ext_resource type="Script" uid="uid://c8b7cr0qpv2og" path="res://scripts/level_manager.gd" id="1_t2qv6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uylh"]
 bg_color = Color(0, 0, 0, 1)
@@ -8,7 +8,7 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h37sy"]
 bg_color = Color(0.385493, 0.385492, 0.385492, 1)
 
-[node name="PauseMenu" type="Control"]
+[node name="LevelCompleteMenu" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -16,7 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h37sy")
+script = ExtResource("1_t2qv6")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -38,7 +38,7 @@ offset_right = 291.0
 offset_bottom = 89.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
-text = "Paused"
+text = "Targets Eliminated!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -55,11 +55,11 @@ offset_right = 196.0
 offset_bottom = 141.5
 grow_horizontal = 2
 grow_vertical = 2
-focus_next = NodePath("Resume")
+focus_next = NodePath("Next Level")
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Resume" type="Button" parent="VBoxContainer"]
+[node name="Next Level" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(280, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -69,7 +69,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_1uylh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1uylh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_h37sy")
-text = "Resume"
+text = "Next Level"
 
 [node name="Main Menu" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(280, 60)
@@ -95,6 +95,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1uylh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_h37sy")
 text = "Quit"
 
-[connection signal="button_down" from="VBoxContainer/Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="VBoxContainer/Next Level" to="." method="_on_next_level_button_down"]
 [connection signal="button_down" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_button_down"]
 [connection signal="button_down" from="VBoxContainer/Quit" to="." method="_on_quit_button_down"]

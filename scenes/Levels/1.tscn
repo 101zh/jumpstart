@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnnka5th1gldj"]
+[gd_scene load_steps=8 format=3 uid="uid://dnnka5th1gldj"]
 
 [ext_resource type="PackedScene" uid="uid://dk3m8yiyy7mbs" path="res://gameobjects/Enemy.tscn" id="1_0d6la"]
 [ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="1_uo1kc"]
 [ext_resource type="PackedScene" uid="uid://se5tqd4uybrx" path="res://gameobjects/MediumLog.tscn" id="2_di7wo"]
 [ext_resource type="PackedScene" uid="uid://d0mdlixr700io" path="res://gameobjects/LongLog.tscn" id="3_iscks"]
+[ext_resource type="PackedScene" uid="uid://dj0i3ilb0em5e" path="res://gameobjects/LevelCompleteMenu.tscn" id="5_tmr42"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_myinc"]
 
@@ -62,3 +63,13 @@ position = Vector2(487, 468)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_uo1kc")]
 visible = false
+
+[node name="LevelCompleteMenu" parent="CanvasLayer" instance=ExtResource("5_tmr42")]
+visible = false
+bullet_count = 5
+
+[node name="BulletNumber" type="Label" parent="CanvasLayer"]
+offset_right = 137.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+text = "1"
