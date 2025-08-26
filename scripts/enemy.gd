@@ -32,4 +32,5 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func die() -> void:
 	GameManager.enemyDeath.emit()
+	GameManager.shoot.emit()
 	queue_free()

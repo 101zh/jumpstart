@@ -1,13 +1,14 @@
 extends Control
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and GameManager.pausable:
 		pauseAndResume()
 
 func _on_resume_button_down() -> void:
-	pauseAndResume()
+	resume()
 
 func _on_main_menu_button_down() -> void:
+	resume()
 	GameManager.change_scene_to_file("res://gameobjects/MainMenu.tscn")
 	
 func _on_quit_button_down() -> void:
