@@ -9,6 +9,9 @@ var last_linear_velocity : Vector2;
 func _ready():
 	GameManager.enemyCount.emit()
 
+func _process(delta: float) -> void:
+	last_linear_velocity = linear_velocity
+
 func _physics_process(delta):
 	for node in get_colliding_bodies():
 		if node is RigidBody2D:
@@ -22,8 +25,6 @@ func _physics_process(delta):
 			if abs(last_linear_velocity.y) > fallingSpeedThreshold:
 				print("fall damage")
 				die()
-				
-	last_linear_velocity = linear_velocity
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:

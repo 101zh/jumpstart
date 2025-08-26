@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2f87jh5elc0a"]
+
+[ext_resource type="PackedScene" uid="uid://dj0i3ilb0em5e" path="res://gameobjects/LevelCompleteMenu.tscn" id="1_3tonr"]
+[ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="2_cehrq"]
+[ext_resource type="Texture2D" uid="uid://cqkpstk3ab03o" path="res://scripts/bullet_icon.png" id="3_8ooux"]
+[ext_resource type="PackedScene" uid="uid://sbwpjuxunt7m" path="res://gameobjects/ShieldedEnemy.tscn" id="4_cehrq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_myinc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_myinc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleteMenu" parent="CanvasLayer" instance=ExtResource("1_3tonr")]
+bullet_count = 4
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_cehrq")]
+visible = false
+
+[node name="BulletNumber" type="Label" parent="CanvasLayer"]
+offset_right = 137.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+text = "1"
+
+[node name="BulletIcon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(48, 19)
+texture = ExtResource("3_8ooux")
+
+[node name="ShieldedEnemy" parent="CanvasLayer" instance=ExtResource("4_cehrq")]
+position = Vector2(483, 499)
+
+[node name="ShieldedEnemy2" parent="CanvasLayer" instance=ExtResource("4_cehrq")]
+position = Vector2(646, 498)
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -10
+position = Vector2(573, 291)
+scale = Vector2(1246, 682)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(540, 622.75)
+scale = Vector2(1450, 184.5)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2(0.0131034, -0.49729)
+scale = Vector2(0.000689655, 0.00542006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_myinc")
