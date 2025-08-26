@@ -12,7 +12,7 @@ func _physics_process(delta):
 	for node in get_colliding_bodies():
 		if node is RigidBody2D:
 			var body : RigidBody2D = node
-			var relativeVelocity : Vector2 = abs(body.linear_velocity - last_linear_velocity)
+			var relativeVelocity : Vector2 = abs(node.last_linear_velocity - last_linear_velocity)
 			print("colliding with "+ node.name+" ; at "+str(relativeVelocity.length()))
 			if relativeVelocity.length() > speedThreshold:
 				die()

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://xyfc5y0ojsgh"]
+[gd_scene load_steps=9 format=3 uid="uid://xyfc5y0ojsgh"]
 
 [ext_resource type="PackedScene" uid="uid://dk3m8yiyy7mbs" path="res://gameobjects/Enemy.tscn" id="1_0d6la"]
 [ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="1_uo1kc"]
 [ext_resource type="PackedScene" uid="uid://d0mdlixr700io" path="res://gameobjects/LongLog.tscn" id="3_iscks"]
 [ext_resource type="PackedScene" uid="uid://dj0i3ilb0em5e" path="res://gameobjects/LevelCompleteMenu.tscn" id="5_tmr42"]
 [ext_resource type="Texture2D" uid="uid://cqkpstk3ab03o" path="res://scripts/bullet_icon.png" id="6_fua1t"]
+[ext_resource type="PackedScene" uid="uid://sbwpjuxunt7m" path="res://gameobjects/ShieldedEnemy.tscn" id="7_2lpc5"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_myinc"]
 
@@ -55,3 +56,9 @@ rotation = 1.5708
 
 [node name="Enemy" parent="." instance=ExtResource("1_0d6la")]
 position = Vector2(653, 465)
+
+[node name="ShieldedEnemy" parent="." instance=ExtResource("7_2lpc5")]
+position = Vector2(290, 326)
+
+[node name="Log" parent="." instance=ExtResource("3_iscks")]
+position = Vector2(289, 446)
