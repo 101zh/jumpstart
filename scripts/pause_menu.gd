@@ -13,6 +13,10 @@ func _on_main_menu_button_down() -> void:
 	
 func _on_quit_button_down() -> void:
 	get_tree().quit()
+	
+func _on_retry_button_down() -> void:
+	resume()
+	get_tree().reload_current_scene()
 
 func resume():
 	get_tree().paused = false
