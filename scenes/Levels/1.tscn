@@ -58,7 +58,7 @@ rotation = 1.5708
 position = Vector2(653, 465)
 
 [node name="ShieldedEnemy" parent="." instance=ExtResource("7_2lpc5")]
-position = Vector2(290, 326)
+position = Vector2(289, 325)
 
 [node name="Log" parent="." instance=ExtResource("3_iscks")]
 position = Vector2(289, 446)

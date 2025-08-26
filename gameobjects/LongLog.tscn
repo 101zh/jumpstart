@@ -8,6 +8,7 @@ size = Vector2(20, 169.5)
 [sub_resource type="CanvasTexture" id="CanvasTexture_njov2"]
 
 [node name="Log" type="RigidBody2D"]
+modulate = Color(0.64, 0.453333, 0.32, 1)
 input_pickable = true
 can_sleep = false
 script = ExtResource("1_h6k6y")

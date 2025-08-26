@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+@export var isShielded : bool = false
+@export var impulseStrength : float = 50.0
 const speedThreshold : float = 200
 const fallingSpeedThreshold : float = 350
 var last_linear_velocity : Vector2;
@@ -27,7 +29,11 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index==1 and GameManager.bullets>=1:
 			print("sniped")
-			die()
+			if isShielded:
+				var impulseDir : Vector2 = global_position - event.global_position
+				apply_impulse(impulseDir.normalized() * impulseStrength)
+			else:
+				die()
 			GameManager.bullets-=1
 
 func die() -> void:
