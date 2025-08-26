@@ -13,6 +13,7 @@ input_pickable = true
 can_sleep = false
 script = ExtResource("1_huv5a")
 isShielded = true
+impulseStrength = 25.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_njov2")

@@ -2,6 +2,7 @@ extends Control
 
 const pathToLevels : String = "res://scenes/Levels/"
 var enemies : int = 0;
+@export var wait_time : float = 3
 @export var bullet_count : int;
 @onready var bullet_number: Label = $"../BulletNumber"
 var crosshair = load("res://images/crosshair.png")
@@ -21,7 +22,8 @@ func _process(delta: float) -> void:
 	bullet_number.text = str(GameManager.bullets)
 
 func _on_next_level_button_down() -> void:
-	var levelNumber : int = int(get_tree().current_scene.scene_file_path.substr(get_tree().current_scene.scene_file_path.length()-6, 1))
+	var levelNumber : int = int(get_tree().current_scene.name)
+	print(levelNumber)
 	if(levelNumber>=GameManager.level_count):
 		GameManager.change_scene_to_file("res://gameobjects/EndingMenu.tscn")
 	else:
@@ -39,7 +41,7 @@ func _on_retry_button_down() -> void:
 func onZeroBullets() -> void:
 	print("zero bullets")
 	if GameManager.bullets <= 0 and enemies >= 1:
-		await get_tree().create_timer(3, false, false, true).timeout
+		await get_tree().create_timer(wait_time, false, false, true).timeout
 		if GameManager.bullets<=0 and enemies>=1:
 			print("level failed")
 			level_failed.show()

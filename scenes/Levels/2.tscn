@@ -71,7 +71,6 @@ scale = Vector2(0.000689655, 0.00542006)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
 position = Vector2(-29.6589, 77.5249)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kq1h3")
 
 [node name="ShieldedEnemy" parent="." instance=ExtResource("4_kq1h3")]

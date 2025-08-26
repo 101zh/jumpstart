@@ -2,7 +2,6 @@ extends RigidBody2D
 
 @export var isShielded : bool = false
 @export var impulseStrength : float = 20
-const impulseYScaling : float = 0.25
 var last_linear_velocity : Vector2;
 
 func _process(delta: float) -> void:
@@ -13,7 +12,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		if event.pressed and event.button_index==1 and GameManager.bullets>=1:
 			if isShielded:
 				var impulseDir : Vector2 = position - event.position
-				impulseDir.y *= impulseYScaling
 				apply_impulse(impulseDir * impulseStrength, invert(impulseDir))
 			else:
 				queue_free()

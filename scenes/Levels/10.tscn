@@ -1,0 +1,220 @@
+[gd_scene load_steps=12 format=3 uid="uid://b113k2erdot4q"]
+
+[ext_resource type="PackedScene" uid="uid://dj0i3ilb0em5e" path="res://gameobjects/LevelCompleteMenu.tscn" id="1_uo4vm"]
+[ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="2_3c3fy"]
+[ext_resource type="Texture2D" uid="uid://cqkpstk3ab03o" path="res://scripts/bullet_icon.png" id="3_d8jvn"]
+[ext_resource type="PackedScene" uid="uid://sbwpjuxunt7m" path="res://gameobjects/ShieldedEnemy.tscn" id="4_keeqc"]
+[ext_resource type="PackedScene" uid="uid://cedn7npun3ndo" path="res://gameobjects/Logs/ShortLog.tscn" id="4_n4ccf"]
+[ext_resource type="PackedScene" uid="uid://cij0pk5ot36v5" path="res://gameobjects/Logs/ShieldedMediumLog.tscn" id="5_uo4vm"]
+[ext_resource type="PackedScene" uid="uid://dk3m8yiyy7mbs" path="res://gameobjects/Enemy.tscn" id="5_v3nfo"]
+[ext_resource type="PackedScene" uid="uid://se5tqd4uybrx" path="res://gameobjects/Logs/MediumLog.tscn" id="5_xmdnp"]
+[ext_resource type="PackedScene" uid="uid://bvne8qxuy3qxb" path="res://gameobjects/Logs/ShieldedShortLog.tscn" id="7_ctto7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_myinc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_myinc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleteMenu" parent="CanvasLayer" instance=ExtResource("1_uo4vm")]
+wait_time = 5.0
+bullet_count = 1
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_3c3fy")]
+visible = false
+
+[node name="BulletNumber" type="Label" parent="CanvasLayer"]
+offset_right = 137.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+text = "1"
+
+[node name="BulletIcon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(48, 19)
+texture = ExtResource("3_d8jvn")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -10
+position = Vector2(573, 291)
+scale = Vector2(1246, 682)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(540, 622.75)
+scale = Vector2(1450, 184.5)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2(0.0131034, -0.49729)
+scale = Vector2(0.000689655, 0.00542006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_myinc")
+
+[node name="Log12" parent="." instance=ExtResource("7_ctto7")]
+position = Vector2(303, 388)
+
+[node name="Log17" parent="." instance=ExtResource("7_ctto7")]
+position = Vector2(417, 388)
+
+[node name="Log18" parent="." instance=ExtResource("7_ctto7")]
+position = Vector2(542, 388)
+
+[node name="Log19" parent="." instance=ExtResource("7_ctto7")]
+position = Vector2(666, 388)
+
+[node name="Log20" parent="." instance=ExtResource("7_ctto7")]
+position = Vector2(779, 388)
+
+[node name="Log13" parent="." instance=ExtResource("5_uo4vm")]
+position = Vector2(355, 337)
+rotation = 1.5708
+
+[node name="Log14" parent="." instance=ExtResource("5_uo4vm")]
+position = Vector2(479, 337)
+rotation = 1.5708
+
+[node name="Log15" parent="." instance=ExtResource("5_uo4vm")]
+position = Vector2(603, 337)
+rotation = 1.5708
+
+[node name="Log16" parent="." instance=ExtResource("5_uo4vm")]
+position = Vector2(727, 337)
+rotation = 1.5708
+
+[node name="Log26" parent="." instance=ExtResource("7_ctto7")]
+position = Vector2(418, 187)
+
+[node name="Log27" parent="." instance=ExtResource("7_ctto7")]
+position = Vector2(543, 187)
+
+[node name="Log31" parent="." instance=ExtResource("7_ctto7")]
+position = Vector2(667, 187)
+
+[node name="Log34" parent="." instance=ExtResource("5_uo4vm")]
+position = Vector2(480, 136)
+rotation = 1.5708
+
+[node name="Log35" parent="." instance=ExtResource("5_uo4vm")]
+position = Vector2(604, 136)
+rotation = 1.5708
+
+[node name="Log" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(249, 490)
+
+[node name="Log3" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(362, 490)
+
+[node name="Log8" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(487, 490)
+
+[node name="Log9" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(610, 490)
+
+[node name="Log10" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(734, 490)
+
+[node name="Log11" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(848, 490)
+
+[node name="Log2" parent="." instance=ExtResource("5_xmdnp")]
+position = Vector2(300, 439)
+rotation = 1.5708
+
+[node name="Log4" parent="." instance=ExtResource("5_xmdnp")]
+position = Vector2(424, 439)
+rotation = 1.5708
+
+[node name="Log5" parent="." instance=ExtResource("5_xmdnp")]
+position = Vector2(548, 439)
+rotation = 1.5708
+
+[node name="Log6" parent="." instance=ExtResource("5_xmdnp")]
+position = Vector2(672, 439)
+rotation = 1.5708
+
+[node name="Log7" parent="." instance=ExtResource("5_xmdnp")]
+position = Vector2(796, 439)
+rotation = 1.5708
+
+[node name="Log22" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(356, 287)
+
+[node name="Log23" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(481, 287)
+
+[node name="Log24" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(604, 287)
+
+[node name="Log25" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(728, 287)
+
+[node name="Log28" parent="." instance=ExtResource("5_xmdnp")]
+position = Vector2(418, 236)
+rotation = 1.5708
+
+[node name="Log29" parent="." instance=ExtResource("5_xmdnp")]
+position = Vector2(542, 236)
+rotation = 1.5708
+
+[node name="Log30" parent="." instance=ExtResource("5_xmdnp")]
+position = Vector2(666, 236)
+rotation = 1.5708
+
+[node name="Log33" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(481, 85)
+
+[node name="Log36" parent="." instance=ExtResource("4_n4ccf")]
+position = Vector2(604, 85)
+
+[node name="Log39" parent="." instance=ExtResource("5_xmdnp")]
+position = Vector2(542, 34)
+rotation = 1.5708
+
+[node name="ShieldedEnemy" parent="." instance=ExtResource("4_keeqc")]
+position = Vector2(541, 95)
+
+[node name="ShieldedEnemy2" parent="." instance=ExtResource("4_keeqc")]
+position = Vector2(541, 295)
+
+[node name="ShieldedEnemy3" parent="." instance=ExtResource("4_keeqc")]
+position = Vector2(665, 295)
+
+[node name="ShieldedEnemy4" parent="." instance=ExtResource("4_keeqc")]
+position = Vector2(418, 295)
+
+[node name="ShieldedEnemy6" parent="." instance=ExtResource("4_keeqc")]
+position = Vector2(425, 499)
+
+[node name="ShieldedEnemy7" parent="." instance=ExtResource("4_keeqc")]
+position = Vector2(549, 499)
+
+[node name="ShieldedEnemy8" parent="." instance=ExtResource("4_keeqc")]
+position = Vector2(302, 499)
+
+[node name="ShieldedEnemy9" parent="." instance=ExtResource("4_keeqc")]
+position = Vector2(798, 499)
+
+[node name="ShieldedEnemy11" parent="." instance=ExtResource("4_keeqc")]
+position = Vector2(675, 499)
+
+[node name="Enemy" parent="." instance=ExtResource("5_v3nfo")]
+position = Vector2(481, 196)
+
+[node name="Enemy2" parent="." instance=ExtResource("5_v3nfo")]
+position = Vector2(604, 196)
+
+[node name="Enemy5" parent="." instance=ExtResource("5_v3nfo")]
+position = Vector2(362, 398)
+
+[node name="Enemy6" parent="." instance=ExtResource("5_v3nfo")]
+position = Vector2(485, 398)
+
+[node name="Enemy7" parent="." instance=ExtResource("5_v3nfo")]
+position = Vector2(611, 399)
+
+[node name="Enemy8" parent="." instance=ExtResource("5_v3nfo")]
+position = Vector2(734, 399)
