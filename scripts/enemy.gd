@@ -34,9 +34,10 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				apply_impulse(impulseDir.normalized() * impulseStrength)
 			else:
 				die()
+			
 			GameManager.bullets-=1
+			GameManager.shoot.emit()
 
 func die() -> void:
 	GameManager.enemyDeath.emit()
-	GameManager.shoot.emit()
 	queue_free()

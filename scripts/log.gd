@@ -17,6 +17,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				apply_impulse(impulseDir * impulseStrength, invert(impulseDir))
 			else:
 				queue_free()
+			
 			GameManager.bullets-=1
 			GameManager.shoot.emit()
 
