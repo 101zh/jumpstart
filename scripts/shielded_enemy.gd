@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+@export var impulseStrength : float = 20.0
 const speedThreshold : float = 200
 const fallingSpeedThreshold : float = 350
 var last_linear_velocity : Vector2;
@@ -11,7 +12,7 @@ func _physics_process(delta):
 	for node in get_colliding_bodies():
 		if node is RigidBody2D:
 			var body : RigidBody2D = node
-			var relativeVelocity : Vector2 = abs(node.last_linear_velocity - last_linear_velocity)
+			var relativeVelocity : Vector2 = abs(body.linear_velocity - last_linear_velocity)
 			print("colliding with "+ node.name+" ; at "+str(relativeVelocity.length()))
 			if relativeVelocity.length() > speedThreshold:
 				die()
@@ -27,7 +28,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index==1 and GameManager.bullets>=1:
 			print("sniped")
-			die()
+			var impulseDir : Vector2 = global_position - event.global_position
+			apply_impulse(impulseDir.normalized() * impulseStrength)
 			GameManager.bullets-=1
 
 func die() -> void:

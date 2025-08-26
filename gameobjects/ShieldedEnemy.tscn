@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://sbwpjuxunt7m"]
+
+[ext_resource type="Script" uid="uid://cglsifdsuelcn" path="res://scripts/shielded_enemy.gd" id="1_dlqdv"]
+[ext_resource type="Texture2D" uid="uid://bkluutc6vrbfx" path="res://circle.svg" id="2_hii6y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_31jo8"]
+radius = 30.0
+
+[node name="ShieldedEnemy" type="RigidBody2D"]
+modulate = Color(0.237539, 0.237539, 0.237539, 1)
+input_pickable = true
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("1_dlqdv")
+impulseStrength = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_31jo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_hii6y")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

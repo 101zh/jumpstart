@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://xyfc5y0ojsgh"]
+[gd_scene load_steps=8 format=3 uid="uid://xyfc5y0ojsgh"]
 
 [ext_resource type="PackedScene" uid="uid://dk3m8yiyy7mbs" path="res://gameobjects/Enemy.tscn" id="1_0d6la"]
 [ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="1_uo1kc"]
-[ext_resource type="PackedScene" uid="uid://se5tqd4uybrx" path="res://gameobjects/MediumLog.tscn" id="2_di7wo"]
 [ext_resource type="PackedScene" uid="uid://d0mdlixr700io" path="res://gameobjects/LongLog.tscn" id="3_iscks"]
 [ext_resource type="PackedScene" uid="uid://dj0i3ilb0em5e" path="res://gameobjects/LevelCompleteMenu.tscn" id="5_tmr42"]
 [ext_resource type="Texture2D" uid="uid://cqkpstk3ab03o" path="res://scripts/bullet_icon.png" id="6_fua1t"]
@@ -13,57 +12,10 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Enemy2" parent="." instance=ExtResource("1_0d6la")]
-position = Vector2(731, 488)
-
-[node name="Enemy" parent="." instance=ExtResource("1_0d6la")]
-position = Vector2(557, 484)
-
-[node name="Ground" type="Sprite2D" parent="."]
-position = Vector2(540, 622.75)
-scale = Vector2(1450, 184.5)
-texture = SubResource("CanvasTexture_myinc")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
-position = Vector2(0.0131034, -0.49729)
-scale = Vector2(0.000689655, 0.00542006)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_myinc")
-
-[node name="Ground" type="Sprite2D" parent="Ground"]
-position = Vector2(540, 622.75)
-scale = Vector2(1450, 184.5)
-texture = SubResource("CanvasTexture_myinc")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground/Ground"]
-position = Vector2(0.0131034, -0.49729)
-scale = Vector2(0.000689655, 0.00542006)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground/StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_myinc")
-
-[node name="Log5" parent="." instance=ExtResource("2_di7wo")]
-position = Vector2(808, 468)
-
-[node name="Log4" parent="." instance=ExtResource("2_di7wo")]
-position = Vector2(647, 468)
-
-[node name="Log7" parent="." instance=ExtResource("3_iscks")]
-position = Vector2(733, 395)
-rotation = 1.5708
-
-[node name="Log6" parent="." instance=ExtResource("3_iscks")]
-position = Vector2(562, 395)
-rotation = 1.5708
-
-[node name="Log3" parent="." instance=ExtResource("2_di7wo")]
-position = Vector2(487, 468)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LevelCompleteMenu" parent="CanvasLayer" instance=ExtResource("5_tmr42")]
-bullet_count = 1
+bullet_count = 10
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_uo1kc")]
 visible = false
@@ -77,3 +29,29 @@ text = "1"
 [node name="BulletIcon" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(48, 19)
 texture = ExtResource("6_fua1t")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -10
+position = Vector2(573, 291)
+scale = Vector2(1246, 682)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(540, 622.75)
+scale = Vector2(1450, 184.5)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2(0.0131034, -0.49729)
+scale = Vector2(0.000689655, 0.00542006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_myinc")
+
+[node name="Log6" parent="." instance=ExtResource("3_iscks")]
+position = Vector2(653, 520)
+rotation = 1.5708
+
+[node name="Enemy" parent="." instance=ExtResource("1_0d6la")]
+position = Vector2(653, 465)
