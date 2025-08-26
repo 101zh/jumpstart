@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://dk881hjb8h05j"]
+
+[ext_resource type="PackedScene" uid="uid://dj0i3ilb0em5e" path="res://gameobjects/LevelCompleteMenu.tscn" id="1_kq1h3"]
+[ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="2_n2hil"]
+[ext_resource type="Texture2D" uid="uid://cqkpstk3ab03o" path="res://scripts/bullet_icon.png" id="3_qt8dm"]
+[ext_resource type="PackedScene" uid="uid://sbwpjuxunt7m" path="res://gameobjects/ShieldedEnemy.tscn" id="4_kq1h3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_myinc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_myinc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq1h3"]
+size = Vector2(1425.86, 155.429)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Message" type="Label" parent="CanvasLayer"]
+offset_left = 110.0
+offset_top = 248.0
+offset_right = 453.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 25
+text = "This one's wearing a shield.
+Drop'm"
+
+[node name="LevelCompleteMenu" parent="CanvasLayer" instance=ExtResource("1_kq1h3")]
+bullet_count = 10
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_n2hil")]
+visible = false
+
+[node name="BulletNumber" type="Label" parent="CanvasLayer"]
+offset_right = 137.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+text = "1"
+
+[node name="BulletIcon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(48, 19)
+texture = ExtResource("3_qt8dm")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -10
+position = Vector2(573, 291)
+scale = Vector2(1246, 682)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(540, 622.75)
+scale = Vector2(1450, 184.5)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2(0.0131034, -0.49729)
+scale = Vector2(0.000689655, 0.00542006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_myinc")
+
+[node name="Ground2" type="Sprite2D" parent="."]
+position = Vector2(930, 545)
+scale = Vector2(638, 340)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
+position = Vector2(0.0131034, -0.49729)
+scale = Vector2(0.000689655, 0.00542006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
+position = Vector2(-29.6589, 77.5249)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_kq1h3")
+
+[node name="ShieldedEnemy" parent="." instance=ExtResource("4_kq1h3")]
+position = Vector2(621, 341)

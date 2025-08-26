@@ -37,9 +37,11 @@ func _on_retry_button_down() -> void:
 	get_tree().reload_current_scene()
 
 func onZeroBullets() -> void:
+	print("zero bullets")
 	if GameManager.bullets <= 0 and enemies >= 1:
 		await get_tree().create_timer(3, false, false, true).timeout
 		if GameManager.bullets<=0 and enemies>=1:
+			print("level failed")
 			level_failed.show()
 			GameManager.pausable = false
 

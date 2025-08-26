@@ -1,16 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://xyfc5y0ojsgh"]
+[gd_scene load_steps=7 format=3 uid="uid://xyfc5y0ojsgh"]
 
 [ext_resource type="PackedScene" uid="uid://dk3m8yiyy7mbs" path="res://gameobjects/Enemy.tscn" id="1_0d6la"]
 [ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="1_uo1kc"]
-[ext_resource type="PackedScene" uid="uid://d0mdlixr700io" path="res://gameobjects/Logs/LongLog.tscn" id="3_iscks"]
 [ext_resource type="PackedScene" uid="uid://dj0i3ilb0em5e" path="res://gameobjects/LevelCompleteMenu.tscn" id="5_tmr42"]
 [ext_resource type="Texture2D" uid="uid://cqkpstk3ab03o" path="res://scripts/bullet_icon.png" id="6_fua1t"]
-[ext_resource type="PackedScene" uid="uid://se5tqd4uybrx" path="res://gameobjects/Logs/MediumLog.tscn" id="6_ob4th"]
-[ext_resource type="PackedScene" uid="uid://sbwpjuxunt7m" path="res://gameobjects/ShieldedEnemy.tscn" id="7_2lpc5"]
-[ext_resource type="PackedScene" uid="uid://dg3txsdel0lyq" path="res://gameobjects/Logs/ShieldedLongLog.tscn" id="7_d1fr2"]
-[ext_resource type="PackedScene" uid="uid://cij0pk5ot36v5" path="res://gameobjects/Logs/ShieldedMediumLog.tscn" id="8_m56h5"]
-[ext_resource type="PackedScene" uid="uid://bvne8qxuy3qxb" path="res://gameobjects/Logs/ShieldedShortLog.tscn" id="9_y8faq"]
-[ext_resource type="PackedScene" uid="uid://cedn7npun3ndo" path="res://gameobjects/Logs/ShortLog.tscn" id="10_44aji"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_myinc"]
 
@@ -19,6 +12,15 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Message" type="Label" parent="CanvasLayer"]
+offset_left = 374.0
+offset_top = 250.0
+offset_right = 722.0
+offset_bottom = 362.0
+theme_override_font_sizes/font_size = 25
+text = "Eliminate the Target
+(Left Click)"
 
 [node name="LevelCompleteMenu" parent="CanvasLayer" instance=ExtResource("5_tmr42")]
 bullet_count = 10
@@ -56,25 +58,4 @@ scale = Vector2(0.000689655, 0.00542006)
 shape = SubResource("WorldBoundaryShape2D_myinc")
 
 [node name="Enemy" parent="." instance=ExtResource("1_0d6la")]
-position = Vector2(615, 495)
-
-[node name="Log" parent="." instance=ExtResource("3_iscks")]
-position = Vector2(688, 437)
-
-[node name="Log2" parent="." instance=ExtResource("6_ob4th")]
-position = Vector2(802, 467)
-
-[node name="Log3" parent="." instance=ExtResource("7_d1fr2")]
-position = Vector2(554, 439)
-
-[node name="Log4" parent="." instance=ExtResource("8_m56h5")]
-position = Vector2(502, 463)
-
-[node name="Log5" parent="." instance=ExtResource("9_y8faq")]
-position = Vector2(444, 484)
-
-[node name="Log6" parent="." instance=ExtResource("10_44aji")]
-position = Vector2(352, 482)
-
-[node name="ShieldedEnemy" parent="." instance=ExtResource("7_2lpc5")]
-position = Vector2(803, 357)
+position = Vector2(559, 495)

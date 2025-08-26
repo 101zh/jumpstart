@@ -3,7 +3,7 @@ extends Node
 var bullets : int = 1;
 var last_scene : String = "res://gameobjects/MainMenu.tscn"
 var pausable : bool = true;
-var level_count : int = 1
+var level_count : int = 10
 
 signal enemyCount
 signal enemyDeath

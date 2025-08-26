@@ -1,0 +1,134 @@
+[gd_scene load_steps=10 format=3 uid="uid://ywmg766hwc78"]
+
+[ext_resource type="PackedScene" uid="uid://dj0i3ilb0em5e" path="res://gameobjects/LevelCompleteMenu.tscn" id="1_ihb1o"]
+[ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="2_gib0q"]
+[ext_resource type="Texture2D" uid="uid://cqkpstk3ab03o" path="res://scripts/bullet_icon.png" id="3_bpyfk"]
+[ext_resource type="PackedScene" uid="uid://d0mdlixr700io" path="res://gameobjects/Logs/LongLog.tscn" id="4_gib0q"]
+[ext_resource type="PackedScene" uid="uid://dk3m8yiyy7mbs" path="res://gameobjects/Enemy.tscn" id="6_gib0q"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_myinc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_myinc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq1h3"]
+size = Vector2(1446.32, 155.429)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ihb1o"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Message" type="Label" parent="CanvasLayer"]
+offset_left = 103.0
+offset_top = 88.0
+offset_right = 409.0
+offset_bottom = 161.0
+theme_override_font_sizes/font_size = 25
+text = "Remember to check how 
+many bullets you have"
+
+[node name="LevelCompleteMenu" parent="CanvasLayer" instance=ExtResource("1_ihb1o")]
+bullet_count = 4
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_gib0q")]
+visible = false
+
+[node name="BulletNumber" type="Label" parent="CanvasLayer"]
+offset_right = 137.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+text = "1"
+
+[node name="BulletIcon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(48, 19)
+texture = ExtResource("3_bpyfk")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -10
+position = Vector2(573, 291)
+scale = Vector2(1246, 682)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(540, 622.75)
+scale = Vector2(1450, 184.5)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2(0.0131034, -0.49729)
+scale = Vector2(0.000689655, 0.00542006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_myinc")
+
+[node name="Ground2" type="Sprite2D" parent="."]
+position = Vector2(181, 532)
+scale = Vector2(638, 340)
+texture = SubResource("CanvasTexture_myinc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
+position = Vector2(0.0131034, -0.49729)
+scale = Vector2(0.000689655, 0.00542006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
+position = Vector2(-19.4307, 77.5249)
+shape = SubResource("RectangleShape2D_kq1h3")
+
+[node name="Log2" parent="." instance=ExtResource("4_gib0q")]
+position = Vector2(726, 237)
+rotation = 1.5708
+
+[node name="Log3" parent="." instance=ExtResource("4_gib0q")]
+position = Vector2(726, 216)
+rotation = 1.5708
+
+[node name="Log4" parent="." instance=ExtResource("4_gib0q")]
+position = Vector2(726, 195)
+rotation = 1.5708
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(607, 81)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(8.25006, 93.1249)
+scale = Vector2(17.5001, 187.25)
+texture = SubResource("CanvasTexture_ihb1o")
+
+[node name="Sprite2D6" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(119, -79.9999)
+scale = Vector2(17.5001, 187.25)
+texture = SubResource("CanvasTexture_ihb1o")
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(228, 92.7499)
+scale = Vector2(17.5001, 187.25)
+texture = SubResource("CanvasTexture_ihb1o")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(117.75, 8.12499)
+scale = Vector2(236.5, 17.25)
+texture = SubResource("CanvasTexture_ihb1o")
+
+[node name="Sprite2D4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(22.3752, 177.75)
+scale = Vector2(45.2499, 17.25)
+texture = SubResource("CanvasTexture_ihb1o")
+
+[node name="Sprite2D5" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(214.625, 177.75)
+scale = Vector2(43.2499, 17.25)
+texture = SubResource("CanvasTexture_ihb1o")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-1, -1, -1, 187, 44, 186, 44, 169, 18, 170, 17, 16, 219, 16, 220, 169, 192, 170, 194, 186, 236, 186, 236, -1)
+
+[node name="Enemy" parent="." instance=ExtResource("6_gib0q")]
+position = Vector2(726, 153)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_gib0q")]
+position = Vector2(479, 331)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_gib0q")]
+position = Vector2(980, 498)
