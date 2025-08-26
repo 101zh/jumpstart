@@ -15,6 +15,7 @@ func _init() -> void:
 
 func change_scene_to_file(file : String) -> void:
 	last_scene = get_tree().current_scene.scene_file_path
+	print("Changing to this file: "+file)
 	get_tree().change_scene_to_file(file)
 
 func checkBullets() -> void:

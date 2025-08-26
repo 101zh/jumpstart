@@ -17,7 +17,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ift1m"]
 size = Vector2(1425.86, 183.238)
 
-[node name="Node2D" type="Node2D"]
+[node name="9" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

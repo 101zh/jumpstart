@@ -17,7 +17,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7vsvq"]
 size = Vector2(1425.86, 183.238)
 
-[node name="Node2D" type="Node2D"]
+[node name="7" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -75,9 +75,11 @@ position = Vector2(501, 349)
 
 [node name="Enemy3" parent="." instance=ExtResource("6_7vsvq")]
 position = Vector2(349, 497)
+speedThreshold = 150.0
 
 [node name="Enemy4" parent="." instance=ExtResource("6_7vsvq")]
 position = Vector2(516, 497)
+speedThreshold = 150.0
 
 [node name="Ground2" type="Sprite2D" parent="."]
 position = Vector2(432, 469)

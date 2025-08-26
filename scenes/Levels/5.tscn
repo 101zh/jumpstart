@@ -15,7 +15,7 @@ size = Vector2(1446.32, 155.429)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ihb1o"]
 
-[node name="Node2D" type="Node2D"]
+[node name="5" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

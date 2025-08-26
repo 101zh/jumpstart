@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b113k2erdot4q"]
+[gd_scene load_steps=13 format=3 uid="uid://b113k2erdot4q"]
 
 [ext_resource type="PackedScene" uid="uid://dj0i3ilb0em5e" path="res://gameobjects/LevelCompleteMenu.tscn" id="1_uo4vm"]
 [ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="2_3c3fy"]
@@ -8,18 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://cij0pk5ot36v5" path="res://gameobjects/Logs/ShieldedMediumLog.tscn" id="5_uo4vm"]
 [ext_resource type="PackedScene" uid="uid://dk3m8yiyy7mbs" path="res://gameobjects/Enemy.tscn" id="5_v3nfo"]
 [ext_resource type="PackedScene" uid="uid://se5tqd4uybrx" path="res://gameobjects/Logs/MediumLog.tscn" id="5_xmdnp"]
+[ext_resource type="PackedScene" uid="uid://dg3txsdel0lyq" path="res://gameobjects/Logs/ShieldedLongLog.tscn" id="6_tqv24"]
 [ext_resource type="PackedScene" uid="uid://bvne8qxuy3qxb" path="res://gameobjects/Logs/ShieldedShortLog.tscn" id="7_ctto7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_myinc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_myinc"]
 
-[node name="Node2D" type="Node2D"]
+[node name="10" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LevelCompleteMenu" parent="CanvasLayer" instance=ExtResource("1_uo4vm")]
-wait_time = 5.0
+wait_time = 10.0
 bullet_count = 1
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_3c3fy")]
@@ -218,3 +219,11 @@ position = Vector2(611, 399)
 
 [node name="Enemy8" parent="." instance=ExtResource("5_v3nfo")]
 position = Vector2(734, 399)
+
+[node name="Log21" parent="." instance=ExtResource("6_tqv24")]
+position = Vector2(498, -8000)
+rotation = 1.5708
+scale = Vector2(6, 6)
+mass = 1000.0
+gravity_scale = 0.0
+linear_velocity = Vector2(0, 1500)

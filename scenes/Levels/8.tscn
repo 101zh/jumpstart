@@ -13,7 +13,7 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8e26i"]
 
-[node name="Node2D" type="Node2D"]
+[node name="8" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

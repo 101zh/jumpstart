@@ -9,7 +9,7 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_myinc"]
 
-[node name="Node2D" type="Node2D"]
+[node name="6" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

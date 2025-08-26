@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 
 func _on_next_level_button_down() -> void:
 	var levelNumber : int = int(get_tree().current_scene.name)
-	print(levelNumber)
+	print(get_tree().current_scene.name)
 	if(levelNumber>=GameManager.level_count):
 		GameManager.change_scene_to_file("res://gameobjects/EndingMenu.tscn")
 	else:
