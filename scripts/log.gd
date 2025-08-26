@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @export var isShielded : bool = false
-@export var impulseStrength : float = 15
+@export var impulseStrength : float = 20
 const impulseYScaling : float = 0.25
 var last_linear_velocity : Vector2;
 

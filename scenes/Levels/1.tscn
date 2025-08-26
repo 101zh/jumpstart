@@ -56,13 +56,13 @@ scale = Vector2(0.000689655, 0.00542006)
 shape = SubResource("WorldBoundaryShape2D_myinc")
 
 [node name="Enemy" parent="." instance=ExtResource("1_0d6la")]
-position = Vector2(264, 495)
+position = Vector2(615, 495)
 
 [node name="Log" parent="." instance=ExtResource("3_iscks")]
 position = Vector2(688, 437)
 
 [node name="Log2" parent="." instance=ExtResource("6_ob4th")]
-position = Vector2(617, 463)
+position = Vector2(802, 467)
 
 [node name="Log3" parent="." instance=ExtResource("7_d1fr2")]
 position = Vector2(554, 439)
@@ -77,4 +77,4 @@ position = Vector2(444, 484)
 position = Vector2(352, 482)
 
 [node name="ShieldedEnemy" parent="." instance=ExtResource("7_2lpc5")]
-position = Vector2(954, 492)
+position = Vector2(803, 357)

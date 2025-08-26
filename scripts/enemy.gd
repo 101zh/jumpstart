@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @export var isShielded : bool = false
 @export var impulseStrength : float = 175.0
-const speedThreshold : float = 200
+const speedThreshold : float = 175
 const fallingSpeedThreshold : float = 350
 var last_linear_velocity : Vector2;
 
