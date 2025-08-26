@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dj0i3ilb0em5e" path="res://gameobjects/LevelCompleteMenu.tscn" id="1_03jcc"]
 [ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="2_4u3vk"]
-[ext_resource type="Texture2D" uid="uid://cqkpstk3ab03o" path="res://scripts/bullet_icon.png" id="3_neb2m"]
+[ext_resource type="Texture2D" uid="uid://cqkpstk3ab03o" path="res://images/bullet_icon.png" id="3_7vsvq"]
 [ext_resource type="PackedScene" uid="uid://se5tqd4uybrx" path="res://gameobjects/Logs/MediumLog.tscn" id="4_4u3vk"]
 [ext_resource type="PackedScene" uid="uid://dg3txsdel0lyq" path="res://gameobjects/Logs/ShieldedLongLog.tscn" id="5_neb2m"]
 [ext_resource type="PackedScene" uid="uid://dk3m8yiyy7mbs" path="res://gameobjects/Enemy.tscn" id="6_7vsvq"]
@@ -35,7 +35,7 @@ text = "1"
 
 [node name="BulletIcon" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(48, 19)
-texture = ExtResource("3_neb2m")
+texture = ExtResource("3_7vsvq")
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)

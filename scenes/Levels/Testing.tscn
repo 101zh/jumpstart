@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dj0i3ilb0em5e" path="res://gameobjects/LevelCompleteMenu.tscn" id="1_dp14p"]
 [ext_resource type="PackedScene" uid="uid://hp67lgdqe4o0" path="res://gameobjects/PauseMenu.tscn" id="2_f35vw"]
-[ext_resource type="Texture2D" uid="uid://cqkpstk3ab03o" path="res://scripts/bullet_icon.png" id="3_wwp8t"]
+[ext_resource type="Texture2D" uid="uid://cqkpstk3ab03o" path="res://images/bullet_icon.png" id="3_wwp8t"]
 [ext_resource type="PackedScene" uid="uid://dk3m8yiyy7mbs" path="res://gameobjects/Enemy.tscn" id="4_lg7gw"]
 [ext_resource type="PackedScene" uid="uid://d0mdlixr700io" path="res://gameobjects/Logs/LongLog.tscn" id="5_22yrv"]
 [ext_resource type="PackedScene" uid="uid://se5tqd4uybrx" path="res://gameobjects/Logs/MediumLog.tscn" id="6_w6gs3"]
