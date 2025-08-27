@@ -132,3 +132,6 @@ position = Vector2(479, 331)
 
 [node name="Enemy3" parent="." instance=ExtResource("6_gib0q")]
 position = Vector2(980, 498)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

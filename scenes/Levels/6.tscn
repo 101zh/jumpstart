@@ -53,3 +53,6 @@ scale = Vector2(0.000689655, 0.00542006)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_myinc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

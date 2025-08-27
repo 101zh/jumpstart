@@ -11,6 +11,9 @@
 
 [node name="1" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Message" type="Label" parent="CanvasLayer"]

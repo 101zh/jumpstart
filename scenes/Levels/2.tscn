@@ -75,3 +75,6 @@ shape = SubResource("RectangleShape2D_kq1h3")
 
 [node name="ShieldedEnemy" parent="." instance=ExtResource("4_kq1h3")]
 position = Vector2(621, 341)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

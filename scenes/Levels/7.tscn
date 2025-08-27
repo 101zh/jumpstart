@@ -97,3 +97,6 @@ shape = SubResource("RectangleShape2D_7vsvq")
 [node name="Log3" parent="." instance=ExtResource("7_7vsvq")]
 position = Vector2(271, 466)
 impulseStrength = 50.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

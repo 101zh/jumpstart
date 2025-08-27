@@ -254,3 +254,6 @@ rotation = 1.5708
 mass = 1000.0
 gravity_scale = 0.0
 linear_velocity = Vector2(0, 1500)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

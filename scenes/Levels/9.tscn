@@ -161,3 +161,6 @@ rotation = 1.5708
 [node name="Log8" parent="." instance=ExtResource("6_eky1u")]
 position = Vector2(716, 261)
 rotation = 1.5708
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
