@@ -75,11 +75,11 @@ position = Vector2(501, 349)
 
 [node name="Enemy3" parent="." instance=ExtResource("6_7vsvq")]
 position = Vector2(349, 497)
-speedThreshold = 150.0
+speedThreshold = 90.0
 
 [node name="Enemy4" parent="." instance=ExtResource("6_7vsvq")]
 position = Vector2(516, 497)
-speedThreshold = 150.0
+speedThreshold = 90.0
 
 [node name="Ground2" type="Sprite2D" parent="."]
 position = Vector2(432, 469)

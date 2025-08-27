@@ -1,7 +1,7 @@
 extends Node
 
 var bullets : int = 1;
-var last_scene : String = "res://gameobjects/MainMenu.tscn"
+var last_scene : String = "res://scenes/MainMenu.tscn"
 var pausable : bool = true;
 var level_count : int = 10
 

@@ -223,7 +223,34 @@ position = Vector2(734, 399)
 [node name="Log21" parent="." instance=ExtResource("6_tqv24")]
 position = Vector2(498, -8000)
 rotation = 1.5708
-scale = Vector2(6, 6)
+mass = 1000.0
+gravity_scale = 0.0
+linear_velocity = Vector2(0, 1500)
+
+[node name="Log37" parent="." instance=ExtResource("6_tqv24")]
+position = Vector2(324, -8000)
+rotation = 1.5708
+mass = 1000.0
+gravity_scale = 0.0
+linear_velocity = Vector2(0, 1500)
+
+[node name="Log40" parent="." instance=ExtResource("6_tqv24")]
+position = Vector2(150, -7999)
+rotation = 1.5708
+mass = 1000.0
+gravity_scale = 0.0
+linear_velocity = Vector2(0, 1500)
+
+[node name="Log32" parent="." instance=ExtResource("6_tqv24")]
+position = Vector2(671, -7999)
+rotation = 1.5708
+mass = 1000.0
+gravity_scale = 0.0
+linear_velocity = Vector2(0, 1500)
+
+[node name="Log38" parent="." instance=ExtResource("6_tqv24")]
+position = Vector2(845, -7999)
+rotation = 1.5708
 mass = 1000.0
 gravity_scale = 0.0
 linear_velocity = Vector2(0, 1500)

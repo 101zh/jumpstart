@@ -30,7 +30,7 @@ func _on_next_level_button_down() -> void:
 		GameManager.change_scene_to_file(pathToLevels+str(levelNumber+1)+".tscn")
 
 func _on_main_menu_button_down() -> void:
-	GameManager.change_scene_to_file("res://gameobjects/MainMenu.tscn")
+	GameManager.change_scene_to_file("res://scenes/MainMenu.tscn")
 	
 func _on_quit_button_down() -> void:
 	get_tree().quit()

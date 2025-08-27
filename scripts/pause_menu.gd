@@ -9,7 +9,7 @@ func _on_resume_button_down() -> void:
 
 func _on_main_menu_button_down() -> void:
 	resume()
-	GameManager.change_scene_to_file("res://gameobjects/MainMenu.tscn")
+	GameManager.change_scene_to_file("res://scenes/MainMenu.tscn")
 	
 func _on_quit_button_down() -> void:
 	get_tree().quit()
